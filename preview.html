@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLUJAY | Official Website</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+  --blue: #164d91;
+  --bright: #438bdf;
+  --black: #050608;
+  --gray: #a1a6af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5,6,8,.94);
+  border-bottom: 1px solid #172333;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 27px;
+  letter-spacing: 5px;
+  color: var(--bright);
+  font-weight: 700;
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 11px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--bright);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  background:
+    radial-gradient(ellipse at center, #102746 0%, #080d15 38%, #050608 75%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #164d9133;
+  border-radius: 50%;
+  box-shadow: 0 0 100px #164d9122;
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(75px, 15vw, 160px);
+  letter-spacing: 15px;
+  color: white;
+  text-shadow: 0 0 35px #164d91;
+  z-index: 1;
+}
+
+.hero p {
+  color: var(--bright);
+  letter-spacing: 6px;
+  font-size: 12px;
+  margin: 15px;
+  z-index: 1;
+}
+
+.hero button {
+  background: transparent;
+  border: 1px solid var(--bright);
+  color: white;
+  padding: 15px 35px;
+  margin-top: 30px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: .3s;
+  z-index: 1;
+}
+
+.hero button:hover {
+  background: var(--blue);
+  box-shadow: 0 0 25px #164d91;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  color: var(--bright);
+}
+
+.music {
+  background: #090c11;
+}
+
+.releases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.release {
+  background: #101720;
+  border: 1px solid #1b3048;
+  transition: .3s;
+  overflow: hidden;
+}
+
+.release:hover {
+  transform: translateY(-8px);
+  border-color: var(--bright);
+}
+
+.cover {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #142e4d, #050608);
+  font-family: 'Oswald', sans-serif;
+  font-size: 27px;
+  letter-spacing: 4px;
+  text-align: center;
+  padding: 15px;
+}
+
+.release-info {
+  padding: 22px;
+}
+
+.release-info h3 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  font-size: 23px;
+}
+
+.release-info p {
+  color: var(--gray);
+  font-size: 11px;
+  margin: 10px 0 20px;
+}
+
+.release-info a {
+  color: var(--bright);
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.about {
+  background: #050608;
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: #aab1bb;
+  line-height: 2.2;
+  font-size: 13px;
+}
+
+.lore {
+  background: linear-gradient(180deg, #090c11, #100609);
+  text-align: center;
+}
+
+.red {
+  color: #c52b35;
+}
+
+.lore p {
+  color: #aaa;
+  max-width: 650px;
+  margin: auto;
+  line-height: 2;
+  font-size: 13px;
+}
+
+.socials {
+  background: #080b10;
+  text-align: center;
+}
+
+.socials a {
+  display: inline-block;
+  color: white;
+  border: 1px solid #263c57;
+  padding: 15px 25px;
+  margin: 8px;
+  text-decoration: none;
+  font-size: 11px;
+  transition: .3s;
+}
+
+.socials a:hover {
+  background: var(--blue);
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: #515967;
+  border-top: 1px solid #172333;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+@media(max-width:600px) {
+  nav {
+    padding: 18px 5%;
+  }
+  nav a {
+    margin-left: 9px;
+    font-size: 9px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  section {
+    padding: 75px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">BLUJAY</div>
+  <div>
+    <a href="#home">HOME</a>
+    <a href="#music">MUSIC</a>
+    <a href="#about">ABOUT</a>
+    <a href="#lore">LORE</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <h1>BLUJAY</h1>
+  <p>WELCOME TO THE OTHER SIDE.</p>
+  <button onclick="document.getElementById('music').scrollIntoView()">
+    EXPLORE MUSIC
+  </button>
+</header>
+
+<section class="music" id="music">
+  <h2 class="section-title">DISCOGRAPHY</h2>
+
+  <div class="releases">
+
+    <div class="release">
+      <div class="cover">DUSK OF SMITES</div>
+      <div class="release-info">
+        <h3>Dusk of Smites</h3>
+        <p>BLUJAY · ALBUM</p>
+        <a href="YOUR_YOUTUBE_LINK">LISTEN NOW →</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="cover">DESCENT INTO MADNESS</div>
+      <div class="release-info">
+        <h3>Descent Into Madness</h3>
+        <p>BLUJAY · PROJECT</p>
+        <a href="YOUR_YOUTUBE_LINK">LISTEN NOW →</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="cover">CONFLICTS</div>
+      <div class="release-info">
+        <h3>Conflicts</h3>
+        <p>BLUJAY · SERIES</p>
+        <a href="YOUR_YOUTUBE_LINK">LISTEN NOW →</a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="cover">MASK</div>
+      <div class="release-info">
+        <h3>MASK</h3>
+        <p>BLUJAY · SINGLE</p>
+        <a href="YOUR_YOUTUBE_LINK">LISTEN NOW →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2 class="section-title">WHO IS BLUJAY?</h2>
+
+  <p>
+    Behind every mask is a story. Behind every smile is something
+    left unsaid. Blujay is an independent underground artist
+    building something from the ground up.
+    <br><br>
+    Music is more than sound. It's identity, emotion,
+    conflict, and everything that words cannot explain.
+    <br><br>
+    THIS IS BLUJAY.
+  </p>
+</section>
+
+<section class="lore" id="lore">
+  <h2 class="section-title">
+    THE OTHER HALF
+  </h2>
+
+  <h2 class="red" style="font-family:Oswald;font-size:65px;letter-spacing:10px;margin-bottom:25px;">
+    RED
+  </h2>
+
+  <p>
+    Two halves. One whole.
+    <br><br>
+    Blujay and Red represent different sides of the same
+    identity. Their story is one of conflict, reflection,
+    and the struggle to understand oneself.
+    <br><br>
+    THE STORY ISN'T OVER.
+  </p>
+</section>
+
+<section class="socials">
+  <h2 class="section-title">FOLLOW THE MOVEMENT</h2>
+
+  <a href="YOUR_YOUTUBE_LINK" target="_blank">YOUTUBE</a>
+  <a href="YOUR_INSTAGRAM_LINK" target="_blank">INSTAGRAM</a>
+  <a href="YOUR_SOUNDCLOUD_LINK" target="_blank">SOUNDCLOUD</a>
+</section>
+
+<footer>
+  BLUJAY © 2026 · INDEPENDENT ARTIST
+  <br><br>
+  BUILT FROM THE GROUND UP.
+</footer>
+
+</body>
+</html>
